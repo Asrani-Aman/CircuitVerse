@@ -67,3 +67,20 @@ Tagging.create([{ tag_id: tag.id,
                   project_id: projects.second.id },
                 { tag_id: tag.id,
                   project_id: projects.third.id }])
+
+                  5.times do |i|
+                    user = User.new(
+                      email: "preexisting_user#{i+1}@example.com",
+                      password: 'password',
+                      name: "Pre-existing User #{i+1}",
+                      created_at: (Rails.application.config.email_verification_cutoff_date - 10.days),
+                      email_verification_deadline: Time.current + 30.days
+                    )
+                    # Don't call skip_confirmation_notification!
+                    user.save(validate: false)
+                    puts "Created user: #{user.email}, confirmed: #{user.confirmed?}, within grace period: #{user.within_grace_period?}"
+                  end
+                  # 5.times do |i|
+                  #   user = User.find_by(email: "preexisting_user#{i+1}@example.com")
+                  #   user.destroy if user
+                  # end

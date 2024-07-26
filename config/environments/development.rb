@@ -29,7 +29,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -65,21 +65,19 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = {
-    :address              => 'smtp.yandex.com',
-    :port                 => 465,
-    :domain               => 'yandex.com',
-    :user_name            => ENV["CIRCUITVERSE_EMAIL_ID"],
-    :password             =>  ENV["CIRCUITVERSE_EMAIL_PASSWORD"],
-    :ssl                  => true,
-    :authentication       => :login,
-    :enable_starttls_auto => true,
-  }
-  config.action_mailer.delivery_method = :smtp
-  if ENV['DOCKER_ENVIRONMENT']
-    config.action_mailer.smtp_settings = { :address => "mailcatcher", :port => 1025 }
-  else
-    config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
-  end
+  address: 'email-smtp.ap-south-1.amazonaws.com',
+  port: 587,
+  user_name: 'AKIAVPUAYVHSZSL2IBXL',
+  password: 'BIwjwqgAlzxJPD8EmQCCjmHD/H49F5gHUYC0aOfJcWYc',
+  authentication: 'login',
+  enable_starttls_auto: true
+}
+  # config.action_mailer.delivery_method = :smtp
+  # if ENV['DOCKER_ENVIRONMENT']
+  #   config.action_mailer.smtp_settings = { :address => "mailcatcher", :port => 1025 }
+  # else
+  #   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  # end
 
   config.vapid_public_key = ENV["VAPID_PUBLIC_KEY"] || "BGxnigbQCa435vZ8_3uFdqLC0XJHXtONgEdI-ydMMs0JaBsnpUfLxR1UDagq6_cDwHyhqjw77tTlp0ULZkx8Xos="
   config.vapid_private_key = ENV["VAPID_PRIVATE_KEY"] || "FkEMkOQHvMybUlCGH-DsOljTJlLzYGb3xEYsFY5Roxk="

@@ -20,4 +20,22 @@
       </div>
     <% end %>
   </div>
+  <div class="row center-row">
+    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    <% end %>
+  </div>
+
+<% if current_user&.require_email_verification? %>
+  <div class="alert alert-warning">
+    <% if current_user.within_grace_period? %>
+      Your email verification deadline is approaching. Please verify your email soon to avoid being signed out.
+    <% else %>
+      Your grace period has expired. You will be signed out. Please verify your email immediately to restore access.
+    <% end %>
+    <%= link_to "send confirmation email", new_confirmation_path(current_user), class: "btn btn-primary btn-sm" %>
+  </div>
+<% end %>
+
+  
 </div>

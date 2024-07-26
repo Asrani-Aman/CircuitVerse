@@ -1,61 +1,24 @@
-# frozen_string_literal: true
-
+# app/controllers/users/sessions_controller.rb
 class Users::SessionsController < Devise::SessionsController
   prepend_before_action :check_captcha, only: [:create]
 
-  # before_action :configure_sign_in_params, only: [:create]
-
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
   def create
-    super do |user|
-      # Check if 'Remember me' is selected
-      remember_me = params.dig(:user, :remember_me) == "1"
-
-      # Generate JWT token
-      token = JsonWebToken.encode(
-        user_id: user.id, username: user.name, email: user.email, remember_me: remember_me
-      )
-
-      cookie_options = {
-        value: token,
-        # httponly: true,
-        secure: Rails.env.production?,
-        same_site: :strict
-      }
-
-      # Set cookie expiration
-      cookie_options[:expires] = 2.weeks.from_now if remember_me
-
-      # Set JWT token as cookie
-      cookies[:cvt] = cookie_options
+    self.resource = warden.authenticate!(auth_options)
+    set_flash_message!(:notice, :signed_in) if is_flashing_format?
+    sign_in(resource_name, resource)
+    if resource.pre_existing_user? && !resource.confirmed? && resource.within_grace_period?
+      flash[:warning] = "Radhe Radhe Om Shanti Shivbaba Maa. Please verify your email to maintain uninterrupted access."
     end
+    yield resource if block_given?
+    respond_with resource, location: after_sign_in_path_for(resource)
   end
-
-  # DELETE /resource/sign_out
-  def destroy
-    super do
-      # Remove the JWT token cookie
-      cookies.delete(:cvt)
-    end
-  end
-  # protected
-
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-  # end
 
   private
 
-    def check_captcha
-      if Flipper.enabled?(:recaptcha) && !verify_recaptcha
-        self.resource = resource_class.new sign_in_params
-        respond_with_navigational(resource) { render :new }
-      end
+  def check_captcha
+    if Flipper.enabled?(:recaptcha) && !verify_recaptcha
+      self.resource = resource_class.new sign_in_params
+      respond_with_navigational(resource) { render :new }
     end
+  end
 end

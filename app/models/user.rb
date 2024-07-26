@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :stars
   has_many :rated_projects, through: :stars, dependent: :destroy, source: "project"
   has_many :groups_owned, class_name: "Group", foreign_key: "primary_mentor_id", dependent: :destroy
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
+  devise  :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
          :validatable, :omniauthable, :saml_authenticatable, omniauth_providers: %i[google_oauth2 facebook github gitlab]
 
   # has_many :assignments, foreign_key: 'mentor_id', dependent: :destroy
@@ -91,6 +91,17 @@ class User < ApplicationRecord
 
   def flipper_id
     "User:#{id}"
+  end
+  def pre_existing_user?
+    created_at <= Rails.application.config.email_verification_cutoff_date
+  end
+
+  def within_grace_period?
+    email_verification_deadline.present? && email_verification_deadline > Time.current
+  end
+
+  def grace_period_expired?
+    pre_existing_user? && !confirmed? && email_verification_deadline.present? && email_verification_deadline <= Time.current
   end
 
   def moderator?
