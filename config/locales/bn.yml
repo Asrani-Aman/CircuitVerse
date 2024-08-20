@@ -1,4 +1,4 @@
-bn:
+bn-IN:
   edit: "সম্পাদনা"
   show: "দেখান"
   delete: "মুছে ফেলুন"
@@ -31,40 +31,40 @@ bn:
   enter_password: "পাসওয়ার্ড লিখুন"
   enter_name: "নাম লিখুন"
   registration_blocked: "সাইন আপ বর্তমানে অক্ষম আছে"
-  # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
+  #Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
   datetime:
     distance_in_words:
       half_a_minute: "আধা মিনিট"
       less_than_x_seconds:
-        one: "1 সেকেন্ড" # default was: "less than 1 second"
-        other: "%{count} সেকেন্ড" # default was: "less than %{count} seconds"
+        one: "1 সেকেন্ড" #default was: "less than 1 second"
+        other: "%{count} সেকেন্ড" #default was: "less than %{count} seconds"
       x_seconds:
         one: "1 সেকেন্ড"
         other: "%{count} সেকেন্ড"
       less_than_x_minutes:
-        one: "1 মিনিট" # default was: "less than a minute"
-        other: "%{count} মিনিট" # default was: "less than %{count} minutes"
+        one: "1 মিনিট" #default was: "less than a minute"
+        other: "%{count} মিনিট" #default was: "less than %{count} minutes"
       x_minutes:
         one: "1 মিনিট"
         other: "%{count} মিনিট"
       about_x_hours:
-        one: "1 ঘন্টা" # default was: "about 1 hour"
-        other: "%{count} ঘন্টা" # default was: "about %{count} hours"
+        one: "1 ঘন্টা" #default was: "about 1 hour"
+        other: "%{count} ঘন্টা" #default was: "about %{count} hours"
       x_days:
         one: "1 দিন"
         other: "%{count} দিন"
       about_x_months:
-        one: "1 মাস" # default was: "about 1 month"
-        other: "%{count} মাস" # default was: "about %{count} months"
+        one: "1 মাস" #default was: "about 1 month"
+        other: "%{count} মাস" #default was: "about %{count} months"
       x_months:
         one: "1 মাস"
         other: "%{count} মাস"
       about_x_years:
-        one: "1 বছর" # default was: "about 1 year"
-        other: "%{count} বছর" # default was: "about %{count} years"
+        one: "1 বছর" #default was: "about 1 year"
+        other: "%{count} বছর" #default was: "about %{count} years"
       over_x_years:
-        one: "1 বছর" # default was: "over 1 year"
-        other: "%{count} বছর" # default was: "over %{count} years"
+        one: "1 বছর" #default was: "over 1 year"
+        other: "%{count} বছর" #default was: "over %{count} years"
       almost_x_years:
-        one: "1 বছর" # default was: "almost 1 year"
-        other: "%{count} বছর" # default was: "almost %{count} years"
+        one: "1 বছর" #default was: "almost 1 year"
+        other: "%{count} বছর" #default was: "almost %{count} years"
