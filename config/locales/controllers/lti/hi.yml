@@ -1,8 +1,8 @@
 hi:
   lti:
     launch:
-      notice_no_assignment: "No such Assignment is present in CircuitVerse, please contact your LMS Administrator/Teacher"
-      notice_lms_auth_success_teacher: "Logged in as %{email_from_lms} via %{lms_type} for course %{course_title_from_lms}"
-      notice_students_open_in_cv: "Please open the Assignment in CircuitVerse"
-      notice_ask_teacher: "Please ask your teacher to add you in the CircuitVerse group associated with this course."
-      notice_no_account_in_cv: "You have no account associated with email %{email_from_lms} please create first and try again."
+      notice_no_assignment: "सर्किटवर्स में ऐसा कोई असाइनमेंट मौजूद नहीं है, कृपया अपने एलएमएस प्रशासक/शिक्षक से संपर्क करें"
+      notice_lms_auth_success_teacher: "पाठ्यक्रम %{course_title_from_lms} के लिए %{lms_type} के माध्यम से %{email_from_lms} के रूप में लॉग इन किया गया"
+      notice_students_open_in_cv: "कृपया असाइनमेंट को सर्किटवर्स में खोलें"
+      notice_ask_teacher: "कृपया अपने शिक्षक से आपको इस पाठ्यक्रम से जुड़े सर्किटवर्स समूह में जोड़ने के लिए कहें।"
+      notice_no_account_in_cv: "आपका ईमेल से संबद्ध कोई खाता नहीं है%{email_from_lms} कृपया पहले बनाएं और पुनः प्रयास करें।"
