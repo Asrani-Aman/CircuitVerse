@@ -1,4 +1,4 @@
-bn:
+bn-IN:
   users:
     minimum_password_length: "(নুন্যতম %{minimum_password_length} অক্ষর)"
     ask_new_user: "নতুন ব্যবহারকারী?"
@@ -15,7 +15,7 @@ bn:
       edit_profile:
         title: "%{name} - প্রোফাইল সম্পাদনা করুন"
         heading: "প্রোফাইল সম্পাদনা করুন"
-        description_html: '<sup><i class="fa fa-asterisk users-edit-asterisk"></i></sup> দিয়ে চিহ্নিত ক্ষেত্রগুলি বাধ্যতামূলক'
+        description_html: "<sup><i class=\"fa fa-asterisk users-edit-asterisk\"></i></sup> দিয়ে চিহ্নিত ক্ষেত্রগুলি বাধ্যতামূলক"
         profile_picture: "প্রোফাইল ছবি"
         choose_file: "ছবি আপলোড"
         remove_picture: "ছবি সরান"
@@ -66,7 +66,7 @@ bn:
       link_to_unlock_account: "আমার অ্যাকাউন্ট আনলক করুন"
     passwords:
       change_password_heading: "আপনার পাসওয়ার্ড পরিবর্তন করুন"
-      change_password: "পাসওয়ার্ড পরিবর্তন করুন"
+      change_password: "আমার পাসওয়ার্ড পরিবর্তন করুন"
       link_to_login_page: "লগইন পেজে ফিরে যান"
       forgot_password_heading: "পাসওয়ার্ড ভুলে গেছেন?"
       send_reset_link: "পাসওয়ার্ড পরিবর্তন লিঙ্ক পাঠান"

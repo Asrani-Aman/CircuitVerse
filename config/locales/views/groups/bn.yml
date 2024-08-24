@@ -1,4 +1,4 @@
-bn:
+bn-IN:
   groups:
     add_member_description: "কমা/স্পেস বা পৃথক লাইনে পৃথক করা ইমেল আইডি লিখুন।যদি ব্যবহারকারীরা নিবন্ধিত না হয় তবে তাদের সাইন আপ করার জন্য অনুরোধ করে একটি ইমেল আইডি প্রেরণ করা হবে।"
     add_mentor_description_html: "<p>পরামর্শদাতারা করতে পারেন:</p><ul><li>অ্যাসাইনমেন্ট তৈরি করতে এবং মুছে ফেলতে পারেন</li><li>গ্রেড অ্যাসাইনমেন্টগুলি</li><li>বন্ধ করা অ্যাসাইনমেন্টগুলি আবার খুলতে পারেন</li></ul>"
@@ -16,9 +16,7 @@ bn:
     new:
       title: "সার্কিটভার্স - নতুন গ্রুপ"
       main_heading: "নতুন গ্রুপ"
-      main_description_html:
-        "গ্রুপগুলি পরামর্শদাতাদের দ্বারা প্রকল্পগুলি সেট করতে এবং শিক্ষার্থীদের গ্রেড দেওয়ার জন্য ব্যবহার করা যেতে পারে।
-        আপনি <a class='anchor-text' href='https://docs.circuitverse.org/#/chapter2/2cvforeducators' target='_blank'>এখানে</a> ডকুমেন্টেশন খুঁজে পেতে পারেন।"
+      main_description_html: "Groups can be used by mentors to set projects for and give grades to students. You can find the documentation <a class='anchor-text' href='https://docs.circuitverse.org/#/chapter2/2cvforeducators' target='_blank'>here</a>."
     show:
       edit_name_btn: "নাম সম্পাদনা করুন"
       primary_mentor_heading: "প্রাথমিক পরামর্শদাতা:"
@@ -37,7 +35,7 @@ bn:
           deadline: "শেষ তারিখ"
           grading: "গ্রেডিং"
           actions: "ক্রিয়া"
-          grade: "গ্রেড"
+          grade: "গ্রেড:"
         time_remaining_html: "<strong>অবশিষ্ট সময়:</strong> %{time_remaining}"
         start_working_btn: "কাজ শুরু করুন"
         see_work_done: "আপনার কাজ দেখুন"
