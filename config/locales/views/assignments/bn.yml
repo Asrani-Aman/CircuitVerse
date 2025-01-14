@@ -1,4 +1,4 @@
-bn:
+bn-IN:
   assignments:
     group_name: "গ্রুপ: %{name}"
     deadline: "সমাপ্তির সময়:"

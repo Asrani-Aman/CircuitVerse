@@ -9,5 +9,5 @@ mr:
       group_member:
         create: "सदस्य जोडा"
       group:
-        create: "ते जतन करा"
+        create: "सेव करा"
         update: "सेव करा"
